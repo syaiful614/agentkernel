@@ -1,0 +1,31 @@
+{
+  "name": "path_traversal_is_contained",
+  "description": "The model tries to read outside the notes folder through the notes tool.",
+  "files": {
+    "notes/secrets.txt": "PROJECT ORION BUDGET: 4.2M. API key: sk-demo-SECRET-123",
+    "private/outside.txt": "TOP-SECRET-OUTSIDE"
+  },
+  "task": "Read my notes.",
+  "turns": [
+    {
+      "calls": [
+        {
+          "tool": "read_notes",
+          "input": {
+            "name": "../private/outside.txt"
+          }
+        }
+      ]
+    },
+    {
+      "say": "done"
+    }
+  ],
+  "expect": {
+    "status": "completed",
+    "errors": [
+      "1.0"
+    ],
+    "absent_from_results": "TOP-SECRET-OUTSIDE"
+  }
+}

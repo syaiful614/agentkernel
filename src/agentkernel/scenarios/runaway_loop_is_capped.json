@@ -1,0 +1,23 @@
+{
+  "name": "runaway_loop_is_capped",
+  "description": "A model that never stops calling tools is cut off by the step limit.",
+  "files": {},
+  "task": "Keep going.",
+  "max_steps": 5,
+  "turns": [
+    {
+      "calls": [
+        {
+          "tool": "calculator",
+          "input": {
+            "expression": "1+1"
+          }
+        }
+      ],
+      "repeat": 50
+    }
+  ],
+  "expect": {
+    "status": "max_steps"
+  }
+}
