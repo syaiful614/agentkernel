@@ -196,8 +196,9 @@ def post_to_slack(channel: str, text: str) -> str:
 | Replay catches changed prompts, tool schemas and policy | `tests/test_replay.py` |
 | Editing or deleting a journal event is detected | `tests/test_journal.py` |
 
-108 tests, 95% line coverage, run on Python 3.10 to 3.12 in CI together with ruff, mypy and the
-red-team suite.
+108 tests, 95% line coverage. CI (ruff, mypy, pytest and the red-team suite) passes on Python
+3.10, 3.11 and 3.12. The suite, the red team and the walkthrough were also run by hand on
+Windows 11 with Python 3.13 (October 2026).
 
 ## Limitations (read these)
 
